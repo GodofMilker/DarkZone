@@ -80,8 +80,10 @@ public class ZSIGN {
 
     public static boolean silImza(ItemStack is, String baslik) {
         if (sorImzaZ(is, baslik)) {
-            ItemStack ret = is.clone();
-            ret = MinecraftReflection.getBukkitItemStack(ret);
+            /*
+             * ItemStack ret = is.clone(); ret =
+             * MinecraftReflection.getBukkitItemStack(ret);
+             */
             NbtCompound tag = (NbtCompound) NbtFactory.fromItemTag(MinecraftReflection.getBukkitItemStack(is));
             tag.remove("ZSign_" + baslik);
             return true;
