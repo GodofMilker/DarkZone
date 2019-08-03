@@ -138,7 +138,10 @@ public class Cuboid implements Serializable, Cloneable {
     }
 
     public boolean isInside(LivingEntity en) {
-        Location l = en.getLocation();
+        return isInside(en.getLocation());
+    }
+
+    public boolean isInside(Location l) {
         Location l2 = min.getLocation();
         Location l3 = max.getLocation();
         if (l.getX() > l2.getX() && l.getY() > l2.getY() && l.getZ() > l2.getZ() && l.getX() < l3.getX()

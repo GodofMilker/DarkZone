@@ -52,6 +52,7 @@ public class SerItem implements Serializable, Cloneable {
         return ZISU64.yukleIS(itemstack);
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public String toString() {
         String a = "&c";
@@ -61,11 +62,11 @@ public class SerItem implements Serializable, Cloneable {
         } else {
             a = getItemStack().getType().name();
         }
-
         a += "&c(" + getItemStack().getDurability() + "):" + getItemStack().getAmount();
         return a;
     }
 
+    @SuppressWarnings("deprecation")
     public static ItemStack yapEsya(ItemStack is, String isim, ArrayList<String> lore, short altid) {
         ItemStack esya = is;
         ItemMeta esyam = esya.getItemMeta();
